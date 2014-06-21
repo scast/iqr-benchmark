@@ -12,7 +12,7 @@ build
 for view in `ls $1/views`; do
     for query in `ls $1/queries`; do
         STARTTIME=$(start_clock)
-        timeout 600 run $view $query
+        run $view $query
         ENDTIME=$(start_clock)
         RESULTS=$(wc -l runCount)
         ELAPSED=$(echo $ENDTIME-$STARTTIME | bc)

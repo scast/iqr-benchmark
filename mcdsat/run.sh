@@ -12,5 +12,5 @@ build() {
 }
 
 run() {
-    $MCDSAT_DIR/mcdsat/mcdsat RW $1 $2 > runCount
+    timeout 600 $MCDSAT_DIR/mcdsat/mcdsat RW $1 $2 > runCount
 }

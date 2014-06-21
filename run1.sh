@@ -10,7 +10,7 @@ start_clock() {
 build
 
 STARTTIME=$(start_clock)
-timeout 600 run $2 $3
+run $2 $3
 ENDTIME=$(start_clock)
 RESULTS=$(wc -l runCount)
 ELAPSED=$(echo $ENDTIME-$STARTTIME | bc)
