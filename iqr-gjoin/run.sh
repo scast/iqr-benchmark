@@ -1,4 +1,3 @@
-IQR_DIR=~/Projects/tesis
 WORK_DIR=`pwd`
 build() {
     cd $IQR_DIR
