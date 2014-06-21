@@ -9,8 +9,8 @@ start_clock() {
 
 # build
 
-for view in `ls $1/views`; do
-    for query in `ls $1/queries`; do
+for view in `ls $1/views | sort -V`; do
+    for query in `ls $1/queries | sort -V`; do
         STARTTIME=$(start_clock)
 	TMPFILE=`mktemp` || exit 1
         run $view $query $TMPFILE
