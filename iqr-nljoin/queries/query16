@@ -1,0 +1,1 @@
+query16(X1, X2, X3, X4) :- reviewfor(X1, X2), title(X1, X3), text(X1, X4)

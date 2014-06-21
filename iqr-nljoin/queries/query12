@@ -1,0 +1,1 @@
+query12(X1, X2, X3, X4) :- producer(X1, X2), label(X2, X3), publisher(X1, X2), productfeature(X1, X4)

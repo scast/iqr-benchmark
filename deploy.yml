@@ -1,0 +1,61 @@
+---
+- name: Root stuff.
+  hosts: iqr
+  user: root
+  
+  tasks:
+    - name: Update all packages.
+      apt: upgrade=dist
+
+    - name: Install dev tools
+      apt: name={{ item }} state=present
+      with_items: 
+        - git
+        - build-essential
+        - cmake
+        - python-pycurl
+        - aptitude
+        - nano
+        - emacs
+        - python-software-properties    
+        - tmux
+        - htop
+
+    - name: Add boost ppa.
+      apt_repository: repo='ppa:boost-latest/ppa'
+
+    - name: Add Oracle Java repo.
+      apt_repository: repo='ppa:webupd8team/java'
+
+    - name: Update package list.
+      apt: update_cache=yes
+
+    - name: Install Boost.
+      apt: name={{ item }} state=present
+      with_items:
+        - libboost1.55-all-dev
+        - libboost1.55-dbg
+
+    - name: Autoaccept license for Java.
+      shell: echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+
+    - name: Install Java.
+      apt: name=oracle-java7-installer state=present install_recommends=yes
+
+    - name: Set Java as default.
+      apt: pkg=oracle-java7-set-default state=latest install_recommends=yes
+
+    - name: Install Potassco Gringo.
+      apt: name=gringo state=present
+
+    - name: Install Potassco Clasp.
+      apt: name=clasp state=present
+
+    - name: 32 bit compat
+      apt: name={{ item }} state=present
+      with_items:
+        - libc6:i386
+        - libncurses5:i386
+        - libstdc++6:i386
+
+        
