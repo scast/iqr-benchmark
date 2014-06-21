@@ -1,0 +1,1 @@
+query14(X1, X2, X3, X4) :- producer(X1, X2), product(X3, X1), vendor(X3, X4)

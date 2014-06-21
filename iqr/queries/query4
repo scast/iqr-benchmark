@@ -1,0 +1,1 @@
+query4(X1, X2, X3) :- label(X1, X2), homepage(X1, X3)

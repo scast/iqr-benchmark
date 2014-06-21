@@ -1,0 +1,1 @@
+query10(X1, X2, X3, X4) :- label(X1, X2), type(X1, X3), productfeature(X1, X4)
