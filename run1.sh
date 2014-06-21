@@ -10,11 +10,12 @@ start_clock() {
 # build
 
 STARTTIME=$(start_clock)
-run $2 $3
+TMPFILE=`mktemp` || exit 1
+run $2 $3 $TMPFILE
 ENDTIME=$(start_clock)
-RESULTS=$(wc -l runCount)
+RESULTS=$(wc -l $TMPFILE)
 ELAPSED=$(echo $ENDTIME-$STARTTIME | bc)
 VIEW=`basename $2`
 QUERY=`basename $3`
-rm runCount
+rm $TMPFILE
 printf "%s,%s,%s,%s,%s\n" "$1" "$VIEW" "$QUERY" "$ELAPSED" "$RESULTS"

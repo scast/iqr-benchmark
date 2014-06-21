@@ -9,5 +9,5 @@ build() {
 }
 
 run() {
-    timeout 600 $IQR_NLJOIN_DIR/bin/iqr_asp --views $1 -q $2 -s ~/iqr-nljoin/src/asp/combinator.lp --k 7 > runCount
+    timeout 600 $IQR_NLJOIN_DIR/bin/iqr_asp --views $1 -q $2 -s ~/iqr-nljoin/src/asp/combinator.lp --k 7 > $3
 }

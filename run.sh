@@ -12,13 +12,14 @@ start_clock() {
 for view in `ls $1/views`; do
     for query in `ls $1/queries`; do
         STARTTIME=$(start_clock)
-        run $view $query
+	TMPFILE=`mktemp` || exit 1
+        run $view $query $TMPFILE
         ENDTIME=$(start_clock)
-        RESULTS=$(wc -l runCount)
+        RESULTS=$(wc -l $TMPFILE)
         ELAPSED=$(echo $ENDTIME-$STARTTIME | bc)
         VIEW=`basename $view`
         QUERY=`basename $query`
-        rm runCount
+        rm $TMPFILE
         printf "%s,%s,%s,%s,%s\n" "$1" "$VIEW" "$QUERY" "$ELAPSED" "$RESULTS"
     done;
 done;
