@@ -21,6 +21,8 @@
         - tmux
         - htop
         - python-setuptools
+        - libgmp-dev
+        - bc
 
     - name: Add boost ppa.
       apt_repository: repo='ppa:boost-latest/ppa'
