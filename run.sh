@@ -7,7 +7,7 @@ start_clock() {
 . conf.sh
 . $1/run.sh
 
-build
+# build
 
 for view in `ls $1/views`; do
     for query in `ls $1/queries`; do
@@ -19,6 +19,6 @@ for view in `ls $1/views`; do
         VIEW=`basename $view`
         QUERY=`basename $query`
         rm runCount
-        printf "%s,%s,%s,%s,%s" "$1" "$VIEW" "$QUERY" "$ELAPSED" "$RESULTS"
+        printf "%s,%s,%s,%s,%s\n" "$1" "$VIEW" "$QUERY" "$ELAPSED" "$RESULTS"
     done;
 done;

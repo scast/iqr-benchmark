@@ -7,7 +7,7 @@ start_clock() {
 . conf.sh
 . $1/run.sh
 
-build
+# build
 
 STARTTIME=$(start_clock)
 run $2 $3
@@ -17,4 +17,4 @@ ELAPSED=$(echo $ENDTIME-$STARTTIME | bc)
 VIEW=`basename $2`
 QUERY=`basename $3`
 rm runCount
-printf "%s,%s,%s,%s,%s" "$1" "$VIEW" "$QUERY" "$ELAPSED" "$RESULTS"
+printf "%s,%s,%s,%s,%s\n" "$1" "$VIEW" "$QUERY" "$ELAPSED" "$RESULTS"
