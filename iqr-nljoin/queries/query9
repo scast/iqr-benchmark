@@ -1,1 +1,1 @@
-query9(X1, X2) :- productpropertynumeric1(X1, X2)
+query9(x1, x2) :- productpropertynumeric1(x1, x2).

@@ -1,1 +1,1 @@
-query5(X1, X2, X3, X4, X5) :- vendor(X1, X2), offerwebpage(X1, X3), label(X2, X4), homepage(X2, X5)
+query5(x1, x2, x3, x4, x5) :- vendor(x1, x2), offerwebpage(x1, x3), label(x2, x4), homepage(x2, x5).

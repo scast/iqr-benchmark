@@ -1,1 +1,1 @@
-query13(X1, X2, X3) :- productfeature(X1, X2), label(X2, X3)
+query13(x1, x2, x3) :- productfeature(x1, x2), label(x2, x3).

@@ -1,1 +1,1 @@
-query8(X1, X2, X3, X4) :- offerwebpage(X1, X2), price(X1, X3), deliverydays(X1, X4)
+query8(x1, x2, x3, x4) :- offerwebpage(x1, x2), price(x1, x3), deliverydays(x1, x4).
