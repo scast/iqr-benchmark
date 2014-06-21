@@ -1,5 +1,14 @@
+WORK_DIR=`pwd`
+
 build() {
-    echo "Building"
+    cd $MCDSAT_DIR
+    cd TPG-3.1.0
+    python setup.py install
+    cd ..
+    cd dnnf-models
+    make clean
+    make
+    cd $WORK_DIR
 }
 
 run() {
