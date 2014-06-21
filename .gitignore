@@ -1,2 +1,6 @@
 run*.e*
 run*.o*
+.query*
+Sat*
+*~
+*.pyo
