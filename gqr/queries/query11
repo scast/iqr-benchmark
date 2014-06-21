@@ -1,0 +1,1 @@
+query11(X1, X2, X3) :- type(X1, X2), productfeature(X1, X3)
