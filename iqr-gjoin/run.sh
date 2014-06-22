@@ -10,5 +10,5 @@ build() {
 }
 
 run() {
-    sudo timeout 600 $IQR_GJOIN_DIR/bin/iqr_asp --views $1 -q $2 -s $IQR_GJOIN_DIR/src/asp/combinator.lp --k 7 > $3    
+    timeout 600 $IQR_GJOIN_DIR/bin/iqr_asp --views $1 -q $2 -s $IQR_GJOIN_DIR/src/asp/combinator.lp --k 7 > $3    
 }

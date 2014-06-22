@@ -13,7 +13,7 @@ for view in `ls $1/views | sort -V`; do
 #for view in views-1; do
     for query in `ls $1/queries | sort -V`; do
         STARTTIME=$(start_clock)
-	TMPFILE=`mktemp` || exit 1
+	TMPFILE=/mnt/count
         run $1/views/$view $1/queries/$query $TMPFILE
         ENDTIME=$(start_clock)
         RESULTS=$(wc -l $TMPFILE)
@@ -22,6 +22,6 @@ for view in `ls $1/views | sort -V`; do
         QUERY=`basename $query`
         rm $TMPFILE
         printf "%s,%s,%s,%s,%s\n" "$1" "$VIEW" "$QUERY" "$ELAPSED" "$RESULTS"
-	sleep 10s
+	sleep 5s
     done;
 done;
